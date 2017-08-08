@@ -13,6 +13,8 @@ RUN mkdir -p /ghostbin/go/src/github.com/DHowett \
     && git clone https://github.com/DHowett/ghostbin.git /ghostbin/go/src/github.com/DHowett/ghostbin \
     && cd /ghostbin/go/src/github.com/DHowett/ghostbin \
     && git checkout -b v1-stable f9778e5b2cfd999aa8f20d0787396d79785eb2c2 \
+# Change pygmentize path
+    && sed -i -e 's:./bin/pygments/pygmentize:/usr/bin/pygmentize:g' languages.yml \
     && echo "Go get" \
     && go get \
     && echo "Go install" \
