@@ -15,6 +15,7 @@ RUN mkdir -p /ghostbin/go/src/github.com/DHowett \
     && git checkout -b v1-stable f9778e5b2cfd999aa8f20d0787396d79785eb2c2 \
 # Change pygmentize path
     && sed -i -e 's:./bin/pygments/pygmentize:/usr/bin/pygmentize:g' languages.yml \
+    && sed -i -e 's*<script src="https://login.persona.org/include.js"></script>*<script type="text/javascript">navigator.id = {logout: function(){}, watch: function(){}}</script>*g' templates/_lib.tmpl \
     && echo "Go get" \
     && go get \
     && echo "Go install" \
