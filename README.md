@@ -26,3 +26,19 @@ So, you will need to run it on a host using Docker for Linux in order for them t
 As the [master branch of the Ghostbin project](https://github.com/DHowett/spectre/commit/90de2d7c989a603cf494eae3d31ec88420ebe750) (link to the latest master commit at the time of writing this readme) is not stable right now (it has mixed namespaces and is in the middle of a refactor), this Dockerfile uses the latest commit in the `v1-stable` branch, so it will probably not be running the exact same Ghostbin version the production server is running.
 
 I spoke to the author and he told me he is working in making it stable, so in the future this image should adapt to the latest version.
+
+## Usage
+
+In order to run the image, you need to know three things:
+
+1. Ports: This image exposes the 8619 port for serving the Ghostbin site.
+2. Logs volume: This image exposes a `logs` volume, so you are able to read the logs that Ghostbin outputs. The path inside the container will be `/logs`
+3. Data volume: This image exposes a `data` volume, so you are able to access and persist things like pastes, session keys and accounts through containers (and survive restarts).
+
+So, a way to run this container exposing all 3 things would be:
+
+```
+docker run -it -d --name="ghostbin" -p 8619:8169 -v /var/log/ghostbin:/logs -v /var/data/ghostbin:/data dexafree/ghostbin
+```
+
+It would expose the 8619 port of the host machine, mount the `logs` volume at the local path `/var/log/ghostbin` and mount the `data` volume at the local path `/var/data/ghostbin`. You can adapt it to any use you need.
