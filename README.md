@@ -4,7 +4,7 @@ This is a repository I've created in order to have a Docker image for running [G
 
 It allows you to run it in your own computer, internally in your company, or host it in a public server.
 
-The [Ghostbin project](https://github.com/DHowett/spectre) is also Open Source, but due to its dificulty in the setup, I thought that creating a Dockerfile and a docker image would be helpful for people like me who want to host it theirselves.
+The [Ghostbin project](https://github.com/DHowett/spectre) is also Open Source, but due to its hard setup, I thought that creating a Dockerfile and a Docker image would be helpful for people like me who want to host it on their own hardware.
 
 ## Base image
 
