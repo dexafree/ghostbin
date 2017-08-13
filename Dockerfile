@@ -12,10 +12,9 @@ ENV GOPATH=/ghostbin/go
 RUN mkdir -p /ghostbin/go/src/github.com/DHowett \
     && git clone https://github.com/DHowett/ghostbin.git /ghostbin/go/src/github.com/DHowett/ghostbin \
     && cd /ghostbin/go/src/github.com/DHowett/ghostbin \
-    && git checkout -b v1-stable f9778e5b2cfd999aa8f20d0787396d79785eb2c2 \
+    && git checkout -b v1-stable c392751c67afa1c1f0c6771ab6a99da2ef5c5c41 \
 # Change pygmentize path
     && sed -i -e 's:./bin/pygments/pygmentize:/usr/bin/pygmentize:g' languages.yml \
-    && sed -i -e 's*<script src="https://login.persona.org/include.js"></script>*<script type="text/javascript">navigator.id = {logout: function(){}, watch: function(){}}</script>*g' templates/_lib.tmpl \
     && echo "Go get" \
     && go get \
     && echo "Go install" \
