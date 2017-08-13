@@ -1,4 +1,4 @@
-# dexafree/ghostbin Dockerfile
+# dexafree/ghostbin Dockerfile [![Docker Build Status](https://img.shields.io/docker/build/dexafree/ghostbin.svg)](https://hub.docker.com/r/dexafree/ghostbin/)
 
 This is a repository I've created in order to have a Docker image for running [Ghostbin](https://ghostbin.com) in a private server.
 
