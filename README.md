@@ -38,7 +38,7 @@ In order to run the image, you need to know three things:
 So, a way to run this container exposing all 3 things would be:
 
 ```
-docker run -it -d --name="ghostbin" -p 8619:8169 -v /var/log/ghostbin:/logs -v /var/data/ghostbin:/data dexafree/ghostbin
+docker run -it -d --name="ghostbin" -p 8619:8619 -v /var/log/ghostbin:/logs -v /var/data/ghostbin:/data dexafree/ghostbin
 ```
 
 It would expose the 8619 port of the host machine, mount the `logs` volume at the local path `/var/log/ghostbin` and mount the `data` volume at the local path `/var/data/ghostbin`. You can adapt it to any use you need.
